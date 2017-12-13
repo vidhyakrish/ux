@@ -1,0 +1,25 @@
+
+<div>
+  
+ <div class="background">
+   <div class="container " >
+     <div class="title ">
+       <h3><span (click)="togglePanel()">Request Price</span></h3>
+       <div class="price-meta-info">{{ data[0].data.symbol }} {{ data[0].data.price.historical[0].value }} Jan 2011</div>
+     </div>
+     <div class="wrapper {{isPanelVisible}} ">
+       <div class="button-group">
+         <button (click)="getFive()">{{ data[0].actions[0]}}</button>
+         <button (click)="getTen()">{{ data[0].actions[1]}}</button>
+         <button (click)="getTwentyFive()" class="active">{{ data[0].actions[2]}}</button>
+         <button (click)="getN()" >{{ data[0].actions[3]}}</button>
+       </div>
+       
+     </div>
+     <div class="bottom-button {{isPanelVisible}}">
+       <button>{{ data[0].data.price.indicative }}</button>
+     </div>
+   </div>
+ </div>
+
+<router-outlet></router-outlet>
